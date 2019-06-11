@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'dva';
-import styles from './MainPage.css';
+import styles from './mainPage.css';
 import { Layout, Menu, Breadcrumb, Icon, Dropdown } from 'antd';
 
 const { SubMenu } = Menu;

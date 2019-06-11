@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import { connect  } from 'dva';
 import { Link } from 'dva/router'
+// import { Form, Icon, Input, Button, Checkbox } from 'antd';
 import styles from './login.css'
 
 class Login extends Component{
@@ -8,11 +9,17 @@ class Login extends Component{
     constructor(props){
         super(props)
         this.state = {
-            userName:'',
-            userPwd:'',
             nameflag :false,
             psdflag :false
         }
+    }
+
+    componentDidMount(){
+        let {login}  = this.props;
+        login({
+            user_name:"chenmanjie",
+            user_pwd:"Chenmanjie123!"
+        })
     }
 
     changeName(e){
@@ -31,17 +38,6 @@ class Login extends Component{
                 pwdflag:true
             })
         }
-    }
-
-    login(){
-        // console.log(this)
-        // if(this.state.nameflag && this.state.pwdflag){
-        //     console.log(this.props)
-        //     let {history} = this.props;
-        //     history.push({
-        //         pathname:'/home'
-        //     })
-        // }
     }
 
     render(){
@@ -71,53 +67,21 @@ class Login extends Component{
     }
 }
 
-// function Login(props) {
-//     console.log(props);
-//     function changeName(e){
-//         console.log(e)
-//     }
+const mapStateToProps = state=>{
+    console.log('state...',state)
+    return {};
+}
 
-//     function changePwd(){
-//         console.log('222')
-//     }
+const mapDispatchToProps = dispatch=>{
+    return {
+        login(payload){
+            console.log(payload)
+            dispatch({
+                type:'user/login',
+                payload
+            })
+        }
+    };
+}
 
-//     function login(){
-//         console.log(333)
-//     }
-
-//     let {userName,userPwd} = props;
-//     return (
-//         <div className={styles.wrapper}>
-//             <div className={styles.wrap}>
-//                 <div className={styles.writeIn}>
-//                     <img src={require("../../assets/yonghu.png")} alt="" />
-//                     <input type="text" value={userName} placeholder="请输入用户名" onChange={(e)=>{changeName(e)}} />
-//                 </div>
-//                 <div className={styles.writeIn}>
-//                     <img src={require("../../assets/mima.png")} alt="" />
-//                     <input type="text" value={userPwd} placeholder="请输入用户密码" onChange={changePwd} />
-//                 </div>
-//                 <div className={styles.check}>
-//                     <div>
-//                         <span></span>
-//                         <p>记住密码</p>
-//                     </div>
-//                     <p>忘记密码</p>
-//                 </div>
-//                 <button className={styles.btn} onClick={login}>登陆</button>
-//             </div>
-//         </div>
-//     );
-// }
-
-
-Login.defaultProps = {
-    userName:'111',
-    userPwd:'222'
-};
-
-Login.propTypes = {
-
-};
-
-export default connect()(Login);
+export default connect(mapStateToProps,mapDispatchToProps)(Login);
