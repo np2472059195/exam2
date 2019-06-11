@@ -62,7 +62,7 @@ function LoginPage(props){
         Forgot password
       </a>
       <Button type="primary" htmlType="submit" className="login-form-button">
-        Log in
+       登录
       </Button>
       Or <a href="">register now!</a>
     </Form.Item>

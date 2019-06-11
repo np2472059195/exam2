@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
 import { connect } from 'dva';
-import styles from './login.css'
+import styles from './login.css';
 
 function LoginPage(props){
 
