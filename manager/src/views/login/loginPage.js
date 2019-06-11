@@ -2,7 +2,8 @@ import React,{useState,useEffect} from 'react';
 import { connect  } from 'dva';
 import { Link } from 'dva/router';
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
-import styles from './loginPage.scss';
+// import styles from './loginPage.scss';
+import './loginPage.scss';
 
 function LoginPage(props,state){
     console.log(props)
