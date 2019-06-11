@@ -1,7 +1,7 @@
 import React from 'react';
 import { Router, Route, Switch } from 'dva/router';
 import Login from './views/login/login';
-import MainPage from './views/main/mainPage';
+import MainPage from './views/main/MainPage';
 
 function RouterConfig({ history }) {
   return (
