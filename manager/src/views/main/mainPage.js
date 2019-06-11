@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'dva';
 import { Layout, Menu, Breadcrumb, Icon, Dropdown } from 'antd';
-import styles from './mainPage.css';
+import styles from './MainPage.css';
 
 const { SubMenu } = Menu;
 const { Header, Content, Sider } = Layout;
